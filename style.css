@@ -1,0 +1,16 @@
+body{
+    background-position: center;
+    background-size: cover;
+}
+h1{
+    font-weight:1000;
+    color:aqua;
+    font-family: 'Tapestry', cursive;
+}
+a{
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    background-color: crimson;
+    border-radius: 10px;
+    
+}
