@@ -4,10 +4,14 @@ body{
 }
 h1{
     font-weight:1000;
-    color:aqua;
+    color:rgb(198, 91, 248);
     font-family: 'Tapestry', cursive;
+    border: double;
+    border-width:10px;
+    border-color: whitesmoke;
+
 }
-a{
+.btn{
     font-size: 25px;
     color: rgb(255, 255, 255);
     background-color: crimson;
