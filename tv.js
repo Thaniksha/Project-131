@@ -1,4 +1,4 @@
-status="";
+status4="";
 img="";
 object_detector="";
 
@@ -15,7 +15,7 @@ function setup(){
 
  function modelLoaded(){
      console.log("Model loaded");
-     status=true;
+     status4=true;
      object_detector.detect(img,gotResults);
 
  }

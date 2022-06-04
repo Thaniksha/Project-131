@@ -1,21 +1,21 @@
-status="";
+status1="";
 img="";
 object_detector="";
 
 function preload(){
-    img=loadImage('bed_room.jpg');
+    img=loadImage('clock.jpg');
 }
 
 function setup(){
     canvas=createCanvas(640,350);
-    canvas.position(350,200);
+    canvas.position(350,250);
     object_detector=ml5.objectDetector('cocossd',modelLoaded);
-    document.getElementById("status").innerHTML="Status : Detecting Objects";
+    document.getElementById("status1").innerHTML="Status : Detecting Objects";
 }
 
  function modelLoaded(){
      console.log("Model loaded");
-     status=true;
+     status1=true;
      object_detector.detect(img,gotResults);
 
  }
