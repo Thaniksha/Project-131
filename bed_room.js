@@ -1,38 +1,40 @@
-status="";
-img="";
-object_detector="";
+objectDetector= "";
+
+img = "";
+objects = [];
+status = "";
 
 function preload(){
-    img=loadImage('bed_room.jpg');
+  img = loadImage('bed_room.jpg');
 }
 
-function setup(){
-    canvas=createCanvas(640,350);
-    canvas.position(350,200);
-    object_detector=ml5.objectDetector('cocossd',modelLoaded);
-    document.getElementById("status").innerHTML="Status : Detecting Objects";
+
+function setup() {
+  canvas = createCanvas(640, 420);
+  canvas.center();
+  objectDetector = ml5.objectDetector('cocossd', modelLoaded);
+  document.getElementById("status").innerHTML = "Status : Detecting Objects";
 }
 
- function modelLoaded(){
-     console.log("Model loaded");
-     status=true;
-     object_detector.detect(img,gotResults);
+function modelLoaded() {
+  console.log("Model Loaded!")
+  status = true;
+  objectDetector.detect(img, gotResult);
+}
 
- }
+function gotResult(error, results) {
+  if (error) {
+    console.log(error);
+  }
+  console.log(results);
+  objects = results;
+}
 
- function gotResults(results,error){
-     if(error){
-         console.error(error);
-     }
-     console.log(results);
-     objects=results;
- }
 
- function  draw(){
-     image(img,0,0,640,350);
-     if (status != "") {
+function draw() {
+  if (status != undefined) {
   	  image(img, 0, 0, 640, 420);
-    for (i = 0; i < objects.length; i++) {
+    for (var i = 0; i < objects.length; i++) {
       document.getElementById("status").innerHTML = "Status : Objects Detected";
 
       fill(255, 0, 0);
